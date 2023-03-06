@@ -1,0 +1,177 @@
+body{
+    background-color:khaki;
+}
+
+#main
+{ 
+    flex-direction:row;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-flow: wrap;
+    position: absolute;
+    top:100px;
+
+}
+
+#mens
+{
+    
+   
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: absolute;
+    top:10px;
+    left:20px;
+    /* text-align: center; */
+}
+
+#womens
+{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: absolute;
+    top:400px;
+    left:20px;
+
+}
+
+#jewellery
+{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: absolute;
+    top:800px;
+    left:20px;  
+}
+
+#electronics
+{
+    
+   
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: absolute;
+    top:1200px;
+    left:20px;
+
+   
+}
+
+#head1{
+    margin-top: 120px;
+}
+
+#head2{
+    margin-top: 120px;
+}
+
+#head3{
+    margin-top: 120px;
+}
+
+#head4{
+    margin-top: 120px;
+}
+
+#mainHead{
+    text-align: center;
+    color: goldenrod;
+    background-color: crimson;
+}
+
+
+#btn
+{
+    /* position:absolute; */
+    
+    display:flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 1000px;
+    left:20px;
+    margin-top: 50px;
+   
+    
+}
+button
+{
+  
+    height:40px;
+    width: 150px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+button:active
+{
+    background-color: black;
+    color:white;
+
+}
+
+button:hover{
+    background-color:lightgreen;
+}
+
+#search
+{
+    position:absolute;
+    top:10px;
+    left:10px;
+    height:30px;
+    width:910px;
+    color:black;
+    border-radius:10px solid black;
+    border-color:black;
+    margin-top: 20px;
+    margin-left: 60px;
+    
+}
+a{
+    color:black;
+    position: absolute;
+    right:10px;
+    border-radius: 20px;
+
+}
+#btnsearch
+{
+    position:absolute;
+    top:30px;
+    right:100px;
+}
+
+#link{
+    color:darkslategrey;
+    font-size: 20px;
+    list-style:none;
+    box-sizing: content-box;
+    margin-top: 30px;
+    
+}
+#link:hover{
+    color:blueviolet;
+    font-size: 20px;
+    list-style:none;
+    box-sizing: border-box;
+    
+}
+#link1{
+    color:darkslategrey;
+    font-size: 20px;
+    list-style:none;
+    box-sizing: content-box;
+    margin-bottom: 150px;
+}
+#link:hover{
+    color:blueviolet;
+    font-size: 20px;
+    list-style:none;
+    box-sizing: border-box;
+}

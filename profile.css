@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+    color:white
+}
+
+#verify{
+      
+    border-radius: 5px;
+    border-color:darkgoldenrod;
+    width:150px;
+    height: 30px;
+}
+
+#change{
+    border-radius: 5px;
+    border-color:darkgoldenrod;
+    width:150px;
+    height: 30px;
+}
+
+#logout{
+    border-radius: 5px;
+    border-color:darkgoldenrod;
+    width:150px;
+    height: 30px;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="Meshop">
+        <div id="first">Meshop.</div>
+      <a class="end" href="./index.html">Home</a>
+      <a class="end" href="./login.html">Login</a>
+      <a class="end" href="./signup.html">Signup</a>
+
+    </div>
+<br>
+<br>
+<br>
+
+  <div id="all"></div>
+  <div id="match"></div>
+       <p class="error"></p>
+       <form class="login">
+           <fieldset>
+
+            <legend>Login Form</legend>
+            <label >Email</label><br>
+             <input type="email"  id="email" placeholder="Enter your Email"  onkeyup="Emailcheck(this.value)">
+             <br><br>
+             <label for="password">Password</label><br>
+             
+             <input type="text" onkeyup="Passcheck(this.value)" id="password">
+             <br><br>
+             <br>
+   
+             <p class="password-check"> 1 lower case character</p>
+             <br>
+             <p class="password-check"> 1 upper case character</p>
+             <br>
+             <p class="password-check"> 1 numerical  character</p>
+             <br>
+             <p class="password-check"> 1 special character</p>
+            <br>
+             <input type="submit">
+             <br><br>
+             <a href="profile.html">Forget Password?</a>
+
+            </fieldset>
+       </form>
+
+       <script>
+     let field=document.getElementById("all");
+     let same=document.getElementById("match");
+     let bdy=document.getElementsByTagName("body");
+           const currentUser=[];
+           currentUser[0]="John";
+          let login_form  = document.querySelector('.login');
+            let error = document.querySelector('.error');
+
+          login_form.addEventListener('submit', login)
+          let login_email = document.querySelector('#email');
+          let login_password = document.querySelector('#password');
+          let data
+          function login(e){
+            
+
+            let email = login_email.value;
+            let password = login_password.value;
+           if(email.value=="" || password.value=="")
+           {
+             field.innerHTML="All fields has to be filled";
+             filed.style.color="red";
+             bdy.append(field);
+
+           }
+       else
+       {
+        
+           if(count==5 && ecount==1)
+
+        {
+            e.preventDefault();
+            data = JSON.parse(localStorage.getItem('data'));
+            console.log(data);
+           
+            let cases = ["Email not found", "Password Incorrect", "Login Successful"]
+             let x = checklog(email, password)
+              if(x==0 || x==1){
+                    error.innerHTML = cases[x]
+
+              }
+              else{
+                    error.innerHTML = cases[x]  
+                   let token=generateToken();let id=currentUser.length++;
+                   data.forEach((item)=>{
+                     if(item.email==email && item.password==password)
+                     {
+                       let names=item.name;
+                         let email=item.email;
+                         let password=item.password;
+                         let brr={
+                            name:`${names}`,
+                            email:`${email}`,
+                            password:`${password}`,
+                            token:`${token}`
+                         }
+   currentUser.push(brr);
+   login_email.value="";
+   login_password.value="";
+   localStorage.setItem("data" , JSON.stringify(currentUser))
+ window.location.href = "shop.html";
+
+                     }  
+                   })
+
+              }
+           
+            } 
+                 
+    }
+  }       
+
+          function checklog(email, password){
+            let flag = 0
+            if(email==null)
+            {
+              same.innerHTML="No one is signed in first signUp then login";
+              same.style.color="red";
+            }
+            else
+
+            {
+             for(let t of data){
+
+              
+              if(t.email==null)
+            {
+              same.innerHTML="No one is signed in first signUp then login";
+              same.style.color="red";
+            }
+
+                if(t.email == email && t.email!=""){
+                    if(t.password == password && t.password!=""){
+                        return 2;
+                    }
+                    else{
+                        return 1
+                    }
+                    flag = 1
+                }
+             }
+             if(flag == 0){
+                 return 0
+             }
+
+            }
+
+          }
+
+          function generateToken(){
+             let capital_digit = "ABCDEFGHIJKLM" 
+             let small_digit = "abcdefghi" 
+             let number = "0123456789" 
+             let special = "!@#$%^&*()_+" 
+
+             let char = capital_digit + small_digit + number + special
+
+             let token = ""
+             for(let i=0; i<16; i++){
+                 let random = Math.floor(Math.random()*char.length) // 4
+                 token = token + char[random]
+             }
+                return token //  store the token in the perosn object who logged in
+          }
+
+
+          function generateToken1(){
+            //   let token = crypto.randomUUID() // extract 10 charcaters from it
+          }
+              let count=0;
+          function Passcheck(data)
+ {
+
+    let email=login_email.value;
+    
+
+
+ 
+
+  let fir=0;let sec=0;let thir=0;let four=0;let passame=0;
+
+     var passClass=document.getElementsByClassName('password-check');
+     const lowerCase=new RegExp('(?=.*[a-z])');
+     const upperCase=new RegExp('(?=.*[A-Z])');
+     const number=new RegExp('(?=.*[0-9])');
+     const specialchar=new RegExp('(?=.*[!@#\$%\^&\*])');
+     if(lowerCase.test(data))
+     {
+         passClass[0].style.color="green";
+         fir=1;
+
+     }
+       else  
+        {
+         passClass[0].style.color="red";
+         fir=0;
+        }
+
+       if(upperCase.test(data))
+     {
+         passClass[1].style.color="green";
+         sec=1;
+
+     }
+     else{
+         passClass[1].style.color="red";
+         sec=0;
+     }
+
+     if(number.test(data))
+     {
+         passClass[2].style.color="green";
+         thir=1;
+
+     }
+     else{
+         passClass[2].style.color="red";
+        thir=0;
+     }
+ 
+     if(specialchar.test(data))
+     {
+         passClass[3].style.color="green";
+         four=1;
+
+     }
+     else{
+         passClass[3].style.color="red";
+
+        four=0;
+     }
+        
+  if(data==email && email!=="")
+  {
+    
+    same.innerText="password cannot be same as email";
+    same.style.color="red";
+    passame=0;
+    
+  }
+  else{
+      same.innerText="";
+     passame=1;
+  }
+  
+   if(fir==1 && sec==1 && thir==1 && four==1 && passame==1)
+{
+     count=5;
+}
+
+ }
+ 
+ var ecount=0;
+function Emailcheck(data)
+ {
+  
+ 
+    
+
+     if(!data.includes('@'))
+     {
+         same.innerHTML="email must include @";ecount=0;
+         same.style.color="red";
+     }
+     else
+     {
+         same.innerHTML="";
+         ecount=1;
+     }
+ }
+
+       </script>
+</body>
+</html>

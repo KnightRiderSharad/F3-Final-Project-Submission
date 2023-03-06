@@ -1,0 +1,116 @@
+#Meshop
+        {
+        background-color:black;
+        width: 1500px;
+        height: 50px;
+        color: white;
+        text-decoration-color: black;
+        position: absolute;
+        top: 0px;
+        }
+
+        .end
+        {
+            position: relative;
+            color:white;
+            display:inline-block;
+            left:1050px;
+            padding: 8px;
+            bottom: 5px;
+            right:20px;
+            text-decoration: none;
+           
+        }
+        #first
+        {
+            position:relative;
+            left:20px;
+            top:17px;
+        }
+
+        h1
+        {
+        position: relative;
+        top:60px;
+        font: 3em arial;
+        left: 18px;
+
+     }  
+     h3
+     {
+        position: relative;
+        top:50px;
+       font: 1.2em arial;
+       left: 18px;
+
+     }
+     #lady
+     {
+         height:400px;
+         width: 400px;
+         position: relative;
+         top:40px;
+
+         
+         left:400px;
+     }
+
+
+button
+{
+    height:30px;
+    width: 100px;
+    color: black;
+    background-color: white
+}
+
+button:active
+{
+    background-color: black;
+    color: white;
+}
+
+#btn
+{
+     position: absolute;
+     top:200px;
+     left:30px;
+
+     display: inline-block;
+     justify-content: space-evenly;
+     padding: 10px;
+     margin: 3px;
+}
+
+#block
+{   
+    height: 370px;
+    position: absolute;
+    left:40px;
+    top:270px;
+    width: 200px;
+    border: 2px solid black;
+
+
+}
+.bspace
+{
+    
+    padding: 2px;
+    margin: 8px;
+   
+
+}
+#colr
+{
+    position: relative;
+    top:0px;
+    left:50px;
+    right: 10px;
+    
+}
+#rate
+{
+    position: relative;
+    left:40px;
+}
